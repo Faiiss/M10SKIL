@@ -118,7 +118,7 @@ header {
     border-radius: 5px;
     position: absolute;
     transition-property: transform;
-    transition-duration: 0.15s;
+    transition-duration: 0.14s;
     transition-timing-function: ease;
 }
 
