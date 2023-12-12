@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/hamburgers-master/dist/hamburgers.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+  <style>
+    /* Add these styles to your existing CSS or create a new CSS file */
+    .menu-items-mobile {
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      /* Hide overflowing content */
+      max-height: 0;
+      /* Initially set max-height to 0 */
+      transition: max-height 0.3s ease-out;
+      /* Add a transition for smooth animation */
+    }
+
+    .menu-items-mobile.show-menu {
+      display: flex;
+      max-height: 150%;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      gap: 1rem;
+      background: red;
+      width: 420px;
+      padding: 4rem 2rem 2rem 3rem;
+      flex-direction: column;
+      z-index: -1;
+      border-radius: 0rem 0rem 1rem 1rem;
+      transition: 0.3s;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="menu">
+      <button class="hamburger hamburger--spin" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <ul class="menu-items">
+        <li><a href="#">Projecten</a></li>
+        <li><a href="#">Opdrachten</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+      <ul class="menu-items-mobile">
+        <li><a href="#">Projecten</a></li>
+        <li><a href="#">Opdrachten</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+    <div class="logo">
+      <img src="Logo_of_Gemeente_Amsterdam.svg" alt="Gemeente Amsterdam Logo">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search">
+      <button class="search-button">Search</button>
+      <div class="contact-button">Contact</div>
+    </div>
+  </header>
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="https://www.amsterdam.nl/publish/pages/1032049/foto_1_1.jpg" alt="Image 1">
+      <div class="text">Caption 1</div>
+    </div>
+    <div class="slide fade">
+      <img src="https://www.amsterdam.nl/publish/pages/854916/700px/sprong_over_t_ij.jpg" alt="Image 2">
+      <div class="text">Caption 2</div>
+    </div>
+    <div class="slide fade">
+      <img src="https://www.amsterdam.nl/publish/pages/787864/leidseplein.jpg" alt="Image 3">
+      <div class="text">Caption 3</div>
+    </div>
+
+    <!-- Add more slides as needed -->
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+  <script>
+    // Look for .hamburger
+    var hamburger = document.querySelector(".hamburger");
+    // Look for .menu-items
+    var menuItems = document.querySelector(".menu-items-mobile");
+
+    // On click
+    hamburger.addEventListener("click", function () {
+      // Toggle class "is-active" on hamburger
+      hamburger.classList.toggle("is-active");
+      // Toggle class "show-menu" on menu items
+      menuItems.classList.toggle("show-menu");
+    });
+  </script>
+  <script src="js/script.js" defer></script>
+</body>
+
+</html>
